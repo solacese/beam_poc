@@ -33,7 +33,7 @@ Check the Flink dashboard for the jobs that are submitted. Jobs that are in proc
 
 The flink runner parses the subscription message and compares the data (in this case, stocks security) and writes the transformed data to a file (trade_report) in the project directory. 
 
-In a nutshell, the process includes the following steps:
+######  In a nutshell, the process includes the following steps:
     - Creating the Pipeline
     - Applying transforms to the Pipeline
     - Reading input (Subscription Message and Previous day intraday stock details, in this case)
