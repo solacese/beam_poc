@@ -42,7 +42,7 @@ The flink runner parses the subscription message and compares the data (in this 
 
 Host the output file (in this case, trade_report) on HTTP server so that it is accessible to other web components.
 
-To run the beam processor on default runner, you can execute the following command which does not use any flink arguments:
+To run the beam processor on default runner i.e., Direct Runner, you can execute the following command which does not use any flink arguments:
 
 $mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password >'
 
