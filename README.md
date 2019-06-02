@@ -8,24 +8,24 @@ This project is a proof of concept demonstrating how Apache Beam can be used as 
 Download Apache Flink at https://flink.apache.org/downloads.html
 
 Go to installation directory and run the below command
-cd <Flink Home>/bin
->./bin/start-cluster.sh
+cd < Flink Home >/bin
+$./bin/start-cluster.sh
 
 Once started, by default flink dashboard can be accessed at http://localhost:8081
 
 ## Clone the project
 
 Run the below commands to clone the project that contains Topic Subscriber and Beam Processor that streams the data to Flink.
->git clone https://github.com/solacese/beam_poc.git
->cd trade_beam/
+$git clone https://github.com/solacese/beam_poc.git
+$cd trade_beam/
 
 ## Run Beam Stream Processor
 
 Execute the following maven command:
->mvn compile exec:java -Dexec.mainClass=<class name> -Dexec.args='<solace cloud hostname> <username>@<message vpn name> <password> --runner=FlinkRunner --flinkMaster=<flink host>:<flink port>' -Pflink-runner
+$mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password > --runner=FlinkRunner --flinkMaster=< flink host >:< flink port >' -Pflink-runner
 
 Example:
->mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8 --runner=FlinkRunner --flinkMaster=localhost:8081' -Pflink-runner
+$mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8 --runner=FlinkRunner --flinkMaster=localhost:8081' -Pflink-runner
 
 Check the Flink dashboard for the jobs that are submitted. Jobs that are in process will appear in the "Running Jobs" section. Once completed, they can be seen in "Completed Jobs".
 
@@ -42,15 +42,15 @@ Host the output file (in this case, trade_report) on HTTP server so that it is a
 
 To run the beam processor on default runner, you can execute the following command which does not use any flink arguments:
 
->mvn compile exec:java -Dexec.mainClass=<class name> -Dexec.args='<solace cloud hostname> <username>@<message vpn name> <password>' 
+$mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password >'
 
 Example:
->mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8'
+$mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8'
 
->npm install -g http-server 
+$npm install -g http-server 
 
 ###### Run the below command in the same directory as trade_report
->http-server -p 3000 --cors
+$http-server -p 3000 --cors
 
 ###### Navigate to the following URL on browser to display the results:
 http://localhost:3000/index.html
