@@ -21,11 +21,11 @@ $cd trade_beam/
 
 ## Run Beam Stream Processor
 
-Execute the following maven command:
+###### Execute the following maven command:
 
 $mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password > --runner=FlinkRunner --flinkMaster=< flink host >:< flink port >' -Pflink-runner
 
-Example:
+###### Example:
 
 $mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8 --runner=FlinkRunner --flinkMaster=localhost:8081' -Pflink-runner
 
@@ -42,11 +42,11 @@ The flink runner parses the subscription message and compares the data (in this 
 
 Host the output file (in this case, trade_report) on HTTP server so that it is accessible to other web components.
 
-To run the beam processor on default runner i.e., Direct Runner, you can execute the following command which does not use any flink arguments:
+###### To run the beam processor on default runner i.e., Direct Runner, you can execute the following command which does not use any flink arguments:
 
 $mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password >' -Pdirect-runner
 
-Example:
+###### Example:
 
 $mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8' -Pdirect-runner
 
