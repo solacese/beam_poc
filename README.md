@@ -32,7 +32,7 @@ Example:
 
 Check the Flink dashboard for the jobs that are submitted. Jobs that are in process will appear in the "Running Jobs" section. Once completed, they can be seen in "Completed Jobs".
 
-The flink runner parses the subscription message and compares the data (in this case, stocks security) and writes the transformed data to a file (trade_report) in the project directory. 
+The flink runner parses the subscription message and compares the data (in this case, stocks security) with the previous day report (data.csv) and writes the transformed data to a file (trade_report) in the project directory. 
 
 ######  In a nutshell, the process includes the following steps:
     - Creating the Pipeline
