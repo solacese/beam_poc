@@ -221,11 +221,18 @@ public class TopicSubscriberBeam implements Serializable{
                             
                             //System.out.println("Arguments::"+args[0]+","+args[1]+","+args[2]+","+args[3]);
                             
-                            String [] pipelineOrgs = {args[3], args[4]};
-                           
-                            StreamOptions options =
-                                    PipelineOptionsFactory.fromArgs(pipelineOrgs).withValidation().as(StreamOptions.class);
-                            Pipeline pipeline = Pipeline.create(options);
+                            Pipeline pipeline = null;
+                            
+                            if (args.length <= 3 || (args[3].isEmpty() && args[4].isEmpty())) {
+                                System.out.println("No runner information entered");
+                                pipeline = Pipeline.create();
+                            }else {
+                            	String [] pipelineOrgs = {args[3], args[4]};
+                                StreamOptions options =
+                                        PipelineOptionsFactory.fromArgs(pipelineOrgs).withValidation().as(StreamOptions.class);
+                                pipeline = Pipeline.create(options);
+                            }
+                            
                             
                             StreamProcessor sp = new StreamProcessor();
                             sp.processData(marketDataMap, pipeline);
