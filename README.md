@@ -26,6 +26,7 @@ Execute the following maven command:
 $mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password > --runner=FlinkRunner --flinkMaster=< flink host >:< flink port >' -Pflink-runner
 
 Example:
+
 $mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8 --runner=FlinkRunner --flinkMaster=localhost:8081' -Pflink-runner
 
 Check the Flink dashboard for the jobs that are submitted. Jobs that are in process will appear in the "Running Jobs" section. Once completed, they can be seen in "Completed Jobs".
@@ -46,6 +47,7 @@ To run the beam processor on default runner, you can execute the following comma
 $mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password >'
 
 Example:
+
 $mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8'
 
 $npm install -g http-server 
@@ -53,5 +55,5 @@ $npm install -g http-server
 ###### Run the below command in the same directory as trade_report
 $http-server -p 3000 --cors
 
-###### Navigate to the following URL on browser to display the results:
+###### Navigate to the following URL on browser to display the results on web browser:
 http://localhost:3000/index.html
