@@ -8,8 +8,9 @@ This project is a proof of concept demonstrating how Apache Beam can be used as 
 Download Apache Flink at https://flink.apache.org/downloads.html
 
 Go to installation directory and run the below command
-cd < Flink Home >/bin
-$./bin/start-cluster.sh
+
+######  $cd < Flink Home >/bin
+######  $./bin/start-cluster.sh
 
 Once started, by default flink dashboard can be accessed at http://localhost:8081
 
