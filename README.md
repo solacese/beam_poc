@@ -44,11 +44,11 @@ Host the output file (in this case, trade_report) on HTTP server so that it is a
 
 To run the beam processor on default runner i.e., Direct Runner, you can execute the following command which does not use any flink arguments:
 
-$mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password >'
+$mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password >' -Pdirect-runner
 
 Example:
 
-$mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8'
+$mvn compile exec:java -Dexec.mainClass=com.trade.market.TopicSubscriberBeam -Dexec.args='vmr-mr8v6yiwicdj.messaging.solace.cloud:20512 solace-cloud-client@msgvpn-rwtxvklq4sp kasaov362vnboas6r1oi2v85q8' -Pdirect-runner
 
 $npm install -g http-server 
 
