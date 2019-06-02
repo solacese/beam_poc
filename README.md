@@ -22,6 +22,7 @@ $cd trade_beam/
 ## Run Beam Stream Processor
 
 Execute the following maven command:
+
 $mvn compile exec:java -Dexec.mainClass=< class name > -Dexec.args=' < solace cloud hostname > < username >@< message vpn name > < password > --runner=FlinkRunner --flinkMaster=< flink host >:< flink port >' -Pflink-runner
 
 Example:
